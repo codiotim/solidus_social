@@ -6,7 +6,7 @@ class Spree::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   include Spree::Core::ControllerHelpers::Auth
   include Spree::Core::ControllerHelpers::Store
 
-  skip_forgery_protection only: :omniauth_callback
+  skip_forgery_protection only: [:omniauth_callback, :apple]
 
   class << self
     def provides_callback_for(*providers)
